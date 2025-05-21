@@ -222,7 +222,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Custom Settings
 require 'custom.options'
 require 'custom.keymaps'
-vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/' -- for nvchad base46
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -279,7 +278,6 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      preview_config = { border = 'rounded' },
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -353,9 +351,6 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      },
-      win = {
-        border = 'rounded', -- none, single, double, shadow
       },
     },
   },
@@ -664,7 +659,6 @@ require('lazy').setup({
             return diagnostic_message[diagnostic.severity]
           end,
         },
-        -- virtual_text = { current_line = true },
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
@@ -952,6 +946,7 @@ require('lazy').setup({
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+          ['blade-nav'] = { module = 'blade-nav.blink', opts = { close_tag_on_complete = true  }},
         },
         per_filetype = {
           php = { inherit_defaults = true, 'codeium' },

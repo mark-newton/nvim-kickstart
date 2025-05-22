@@ -13,11 +13,14 @@
 ## Changes
 - Default plugins
     - kickstart includes a set of default plugins with common settings (eg. LSP, auto-complete)
-    - changes to default plugins need to be done in the main init.lua, so this could create merge conflicts
+    - some changes to default plugins need to be done in the main init.lua, so this could create merge conflicts
+    - attempt to put default plugin overrides into lua/custom/plugins/overrides.lua
 - Keymaps and options
+    - init.lua modified to import keymaps from lua/custom/keymaps.lua
     - init.lua modified to import options from lua/custom/options.lua
-    - it does this just before the lazy plugins section as keymaps & options should be set before then
+    - it does this just before the lazy plugins section
 - Plugins:
     - init.lua is setup to import plugins from lua/custom/plugins
     - it should import any file in this directory, make sure each file returns a lua table
+    - use overrides.lua to override the default plugins
 

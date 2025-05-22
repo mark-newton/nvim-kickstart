@@ -1,5 +1,10 @@
 # kickstart.nvim
 
+## Fork
+
+This is a fork of the original https://github.com/nvim-lua/kickstart.nvim.
+The aim is to keep the upstream unchanged as much as possible then use custom settings to extend.
+
 ## Introduction
 
 A starting point for Neovim that is:

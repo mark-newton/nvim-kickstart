@@ -860,12 +860,12 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
         opts = {},
       },
@@ -897,7 +897,7 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'super-tab',
+        preset = 'default',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -909,48 +909,16 @@ require('lazy').setup({
         nerd_font_variant = 'mono',
       },
 
-      cmdline = {
-        keymap = { preset = 'super-tab' },
-        completion = { menu = { auto_show = true } },
-      },
-
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        -- documentation = { auto_show = false, auto_show_delay_ms = 500 },
-        documentation = {
-          auto_show = true,
-          auto_show_delay_ms = 500,
-          window = {
-            border = 'rounded',
-            winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,Normal:Normal',
-          },
-        },
-        menu = {
-          draw = {
-            gap = 2,
-            columns = {
-              { 'label', 'label_description', gap = 1 },
-              { 'kind_icon', 'kind' },
-            },
-          },
-          border = 'rounded',
-          winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,Normal:Normal',
-        },
-        trigger = { prefetch_on_insert = false },
-        ghost_text = { enabled = true },
+        documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-          codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
-          ['blade-nav'] = { module = 'blade-nav.blink', opts = { close_tag_on_complete = true  }},
-        },
-        per_filetype = {
-          php = { inherit_defaults = true, 'codeium' },
-          py = { inherit_defaults = true, 'codeium' },
         },
       },
 

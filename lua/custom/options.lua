@@ -60,8 +60,17 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.o.kp = ':help'
     vim.o.foldenable = true
     vim.o.foldmethod = 'expr'
-    vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+    -- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+    vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
     vim.bo.commentstring = '// %s'
+  end,
+})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'py',
+  callback = function()
+    vim.o.foldenable = true
+    vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.opt.foldmethod = 'expr'
   end,
 })
 vim.api.nvim_create_autocmd('VimEnter', {

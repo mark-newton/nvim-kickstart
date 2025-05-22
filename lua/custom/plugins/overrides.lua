@@ -54,25 +54,32 @@ return {
         },
       },
     },
-    -- to see default folds go to https://github.com/nvim-treesitter/nvim-treesitter/tree/master/queries
-    --[[ (function_definition)
-    (interface_declaration)
-    (trait_declaration)
-    (function_static_declaration)
-    (method_declaration) ]]
-    require('vim.treesitter.query').set(
-      'php',
-      'folds',
-      [[
-      [
-      (method_declaration)
-      ] @fold
-      ]]
-    ),
+
+    -- PHP folds on functions only
+    require('vim.treesitter.query').set('php', 'folds', '(method_declaration) @fold'),
+    -- require('vim.treesitter.query').set('python', 'folds', '(function_declaration body: (block @fold'),
   },
 
   {
     'saghen/blink.cmp',
+    dependencies = {
+      {
+        'L3MON4D3/LuaSnip',
+        version = '2.*',
+        build = 'make install_jsregexp',
+        dependencies = {
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
+        },
+      },
+      'folke/lazydev.nvim',
+      'Exafunction/codeium.nvim',
+      { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
+    },
     opts = {
       keymap = {
         preset = 'default',

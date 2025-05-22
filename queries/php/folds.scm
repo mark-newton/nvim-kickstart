@@ -1,3 +1,0 @@
-[
-  (method_declaration)
-] @fold

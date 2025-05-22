@@ -697,6 +697,7 @@ require('lazy').setup({
           },
           hints = { enabled = true },
         },
+
         pylsp = {
           settings = {
             pylsp = {
@@ -741,6 +742,29 @@ require('lazy').setup({
             },
           },
         },
+
+        emmet_ls = {
+          filetypes = { 'blade.php', 'blade', 'html', 'css', 'sass', 'scss' },
+        },
+        tailwindcss = {
+          filetypes = { 'blade.php', 'blade', 'html', 'css', 'sass', 'scss' },
+          settings = {
+            tailwindCSS = {
+              emmetCompletions = true,
+              experimental = {
+                classRegex = false,
+              },
+              classAttributes = { 'class', '@class', 'className', 'classList', 'divClass', 'imageClass', 'ngClass' },
+            },
+          },
+        },
+
+        html = {
+          filetypes = { 'html', 'volt', 'blade', 'blade.php' },
+        },
+        cssls = {}, -- CSS
+        cssmodules_ls = {}, -- CSS
+        dockerls = {}, -- Docker
 
         lua_ls = {
           -- cmd = { ... },

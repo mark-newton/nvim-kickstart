@@ -1,49 +1,49 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
+  'folke/noice.nvim',
+  event = 'VeryLazy',
   opts = {
     cmdline = {
-      view = "cmdline",
+      view = 'cmdline',
     },
     views = {
       cmdline_popup = {
         position = {
           -- row = 11,
-          col = "50%",
+          col = '50%',
         },
         size = {
           width = 60,
-          height = "auto",
+          height = 'auto',
         },
         win_options = {
-          winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
+          winhighlight = { NormalFloat = 'NormalFloat', FloatBorder = 'FloatBorder' },
         },
       },
       hover = {
         border = {
-          style = "rounded",
+          style = 'rounded',
           padding = { 0, 1 },
         },
         win_options = {
-          winhighlight = { Normal = "Normal", FloatBorder = "FloatBorder" },
+          winhighlight = { Normal = 'Normal', FloatBorder = 'FloatBorder' },
         },
       },
       popupmenu = {
-        relative = "editor",
+        relative = 'editor',
         position = {
           -- row = 14,
-          col = "50%",
+          col = '50%',
         },
         size = {
           width = 60,
           height = 10,
         },
         border = {
-          style = "rounded",
+          style = 'rounded',
           padding = { 0, 1 },
         },
         win_options = {
-          winhighlight = { Normal = "Normal", FloatBorder = "FloatBorder" },
+          winhighlight = { Normal = 'Normal', FloatBorder = 'FloatBorder' },
         },
       },
       mini = {
@@ -54,8 +54,13 @@ return {
       },
     },
     lsp = {
-      hover = { enabled = false },
-      signature = { enabled = false },
+      override = {
+        ['vim.lsp.util.convert_input_to_markdown_lines'] = false,
+        ['vim.lsp.util.stylize_markdown'] = false,
+        ['cmp.entry.get_documentation'] = false,
+      },
+      hover = { enabled = true, silent = true },
+      signature = { enabled = true },
     },
     presets = {
       bottom_search = true,
@@ -63,6 +68,6 @@ return {
     },
   },
   dependencies = {
-    "MunifTanjim/nui.nvim",
-  }
+    'MunifTanjim/nui.nvim',
+  },
 }

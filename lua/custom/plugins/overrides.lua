@@ -118,6 +118,17 @@ return {
         trigger = { prefetch_on_insert = false },
         ghost_text = { enabled = true },
       },
+      cmdline = {
+        keymap = {
+          preset = 'cmdline',
+          ['<CR>'] = { 'accept', 'fallback' },
+        },
+        completion = {
+          list = { selection = { preselect = false } },
+          menu = { auto_show = true },
+          ghost_text = { enabled = true },
+        },
+      },
       sources = {
         default = { 'lsp', 'path', 'buffer', 'snippets' },
         providers = {
@@ -127,7 +138,7 @@ return {
         per_filetype = {
           lua = { inherit_defaults = true, 'lazydev' },
           php = { inherit_defaults = true, 'codeium' },
-          py = { inherit_defaults = true, 'codeium' },
+          python = { inherit_defaults = true, 'codeium' },
         },
       },
       signature = {

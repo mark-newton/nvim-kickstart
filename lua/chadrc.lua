@@ -79,16 +79,28 @@ M.ui = {
 
 M.nvdash = {
   load_on_startup = true,
+  header = {
+    '                                                                         ',
+    '                                                                       ',
+    '         ████ ██████           █████      ██                     ',
+    '        ███████████             █████                             ',
+    '        █████████ ███████████████████ ███   ███████████   ',
+    '       █████████  ███    █████████████ █████ ██████████████   ',
+    '      █████████ ██████████ █████████ █████ █████ ████ █████   ',
+    '    ███████████ ███    ███ █████████ █████ █████ ████ █████  ',
+    '   ██████  █████████████████████ ████ █████ █████ ████ ██████ ',
+    '                                                                         ',
+    '                                                                         ',
+  },
   buttons = {
     { txt = '  Find File', keys = 'ff', cmd = 'Telescope find_files' },
     { txt = '  Recent Files', keys = 'fo', cmd = 'Telescope oldfiles' },
     { txt = '󰈭  Find Word', keys = 'fw', cmd = 'Telescope live_grep' },
---    { txt = '󱥚  Themes', keys = 'th', cmd = ":lua require('nvchad.themes').open()" },
-    { txt = '  Check Healh', keys = 'ch', cmd = 'checkhealth' },
+    -- { txt = '󱥚  Themes', keys = 'th', cmd = ":lua require('nvchad.themes').open()" },
+    { txt = '  Checkhealh', keys = 'ch', cmd = 'checkhealth' },
     { txt = '  Lazy', keys = 'cl', cmd = 'Lazy' },
     { txt = '  Mason', keys = 'cm', cmd = 'Mason' },
     { txt = '  Mappings', keys = 'ch', cmd = 'NvCheatsheet' },
-
     { txt = '─', hl = 'NvDashFooter', no_gap = true, rep = true },
     {
       txt = function()

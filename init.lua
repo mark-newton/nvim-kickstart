@@ -894,7 +894,6 @@ require('lazy').setup({
         opts = {},
       },
       'folke/lazydev.nvim',
-      'Exafunction/codeium.nvim',
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config

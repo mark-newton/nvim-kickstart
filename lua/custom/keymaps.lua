@@ -52,6 +52,6 @@ vim.keymap.set('n', '<leader>gb', '<cmd>Telescope git_bcommits<cr>', { desc = '[
 vim.keymap.set(
   'n',
   '<leader>o',
-  "<cmd>lua require('telescope.builtin').lsp_document_symbols({symbols={'method','function'}})<cr>",
+  "<cmd>lua require('telescope.builtin').lsp_document_symbols({symbols={'method','function'}, layout_strategy='vertical',layout_config={width=0.3, height=0.4},previewer=false })<cr>",
   { desc = 'Document [O]utline Function' }
 )

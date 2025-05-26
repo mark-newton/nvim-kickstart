@@ -27,6 +27,13 @@ return {
     'lewis6991/gitsigns.nvim',
     opts = {
       preview_config = { border = 'rounded' },
+      signs = {
+        add = { text = '│' },
+        change = { text = '│' },
+        delete = { text = '│' },
+        topdelete = { text = '│' },
+        changedelete = { text = '│' },
+      },
     },
   },
 
@@ -149,7 +156,8 @@ return {
         },
       },
       signature = {
-        enabled = false,
+        enabled = true,
+        window = { show_documentation = false },
       },
     },
   },

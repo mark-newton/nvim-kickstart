@@ -117,6 +117,3 @@ vim.cmd [[
   autocmd BufWrite * :lua LastMod()
 ]]
 vim.api.nvim_set_keymap('n', '<leader>mod', ':lua LastMod()<CR>', { noremap = true, silent = true })
-
--- nvchad base46
-vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'

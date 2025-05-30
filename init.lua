@@ -443,7 +443,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set('n', '<leader>/', function()
+      vim.keymap.set('n', '<leader>f', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
@@ -634,7 +634,7 @@ require('lazy').setup({
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
-        severity_sort = true,
+        severity_sort = false,
         float = { border = 'rounded', source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
@@ -645,8 +645,8 @@ require('lazy').setup({
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = {
-          current_line = true,
+        virtual_text = false,
+        xvirtual_text = {
           source = 'if_many',
           spacing = 2,
           format = function(diagnostic)
@@ -659,7 +659,16 @@ require('lazy').setup({
             return diagnostic_message[diagnostic.severity]
           end,
         },
+        update_in_insert = false,
       }
+
+      -- Give me rounded borders everywhere
+      local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+      function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+        opts = opts or {}
+        opts.border = 'rounded'
+        return orig_util_open_floating_preview(contents, syntax, opts, ...)
+      end
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.

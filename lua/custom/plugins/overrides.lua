@@ -17,8 +17,18 @@ return {
     'folke/which-key.nvim',
     opts = {
       delay = 500,
+      preset = 'helix',
       win = {
         border = 'rounded', -- none, single, double, shadow
+        height = {
+          max = math.huge,
+        },
+      },
+      icons = {
+        rules = false,
+        breadcrumb = ' ', -- symbol used in the command line area that shows your active key combo
+        separator = '󱦰  ', -- symbol used between a key and it's label
+        group = '󰹍 ', -- symbol prepended to a group
       },
     },
   },
@@ -157,7 +167,10 @@ return {
       },
       signature = {
         enabled = true,
-        window = { show_documentation = false },
+        window = {
+          border = 'rounded',
+          show_documentation = false,
+        },
       },
     },
   },

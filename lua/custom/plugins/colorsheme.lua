@@ -5,34 +5,34 @@ return {
     lazy = false,
     config = function()
       require('kanagawa').setup {
-        compile = true,
-        dimInactive = true,
+        compile = false,
+        dimInactive = false,
+        transparent = true,
+        keywordStyle = { italic = false },
+        statementStyle = { bold = false },
         overrides = function(colors)
           local theme = colors.theme
           local palette = colors.palette
           return {
 
-            IndentBlanklineChar = { fg = palette.waveBlue2 },
-            -- MiniIndentscopeSymbol = { fg = palette.waveBlue2 },
             PmenuSel = { blend = 0 },
             NormalFloat = { bg = 'none' },
-            FloatBorder = { bg = 'none' },
+            FloatBorder = { bg = palette.sumiInk1 },
             FloatTitle = { bg = 'none' },
             CursorLineNr = { bg = theme.ui.bg_p2 },
             Visual = { bg = palette.waveBlue2 },
 
-            -- Save an hlgroup with dark background and dimmed foreground
-            -- so that you can use it where your still want darker windows.
-            -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
             NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-
-            -- Popular plugins that open floats will link to NormalFloat by default;
-            -- set their background accordingly if you wish to keep them dark and borderless
             LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 
+            WinSeparator = { fg = palette.waveBlue2 },
             Folded = { bg = 'none' },
-            MiniIndentscopeSymbol = { fg = theme.ui.bg_p2 },
-            CursorLine = { bg = theme.ui.bg_p1 },
+            MiniIndentscopeSymbol = { fg = theme.ui.bg },
+            CursorLine = { bg = theme.ui.bg },
+
+            TelescopePromptBorder = { fg = palette.sumiInk6, bg = palette.sumiInk1 },
+            TelescopeResultsBorder = { fg = palette.sumiInk6, bg = palette.sumiInk1 },
+            TelescopePreviewBorder = { fg = palette.sumiInk6, bg = palette.sumiInk1 },
           }
         end,
         colors = {
@@ -55,22 +55,32 @@ return {
     config = function()
       require('kanso').setup {
         compile = false,
-        dimInactive = true,
+        dimInactive = false,
         disableItalics = true,
+        transparent = true,
         overrides = function(colors)
           local theme = colors.theme
           local palette = colors.palette
           return {
 
+            -- float borders use; white: oldWhite, blue: zenBlue2
             PmenuSel = { blend = 0 },
             NormalFloat = { bg = 'none' },
-            FloatBorder = { bg = 'none' },
+            FloatBorder = { fg = palette.oldWhite, bg = 'none' },
             FloatTitle = { bg = 'none' },
             Visual = { bg = palette.zenBlue2 },
+
+            WinSeparator = { fg = palette.zenBlue2 },
             Folded = { bg = 'none' },
             MiniIndentscopeSymbol = { fg = theme.ui.bg_p2 },
             CursorLine = { bg = theme.ui.bg_p1 },
-            NormalNC = { bg = palette.zen0 },
+            -- NormalNC = { bg = palette.zen0 }, -- enable for inactive dim
+
+            TelescopePromptBorder = { fg = palette.oldWhite, bg = 'none' },
+            TelescopeResultsBorder = { fg = palette.oldWhite, bg = 'none' },
+            TelescopePreviewBorder = { fg = palette.oldWhite, bg = 'none' },
+
+            PounceMatch = { fg = theme.ui.fg_reverse, bg = theme.diag.warning },
           }
         end,
         colors = {

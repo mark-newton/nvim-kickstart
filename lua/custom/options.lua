@@ -18,6 +18,9 @@ vim.g.netrw_browse_split = 0
 -- default win border (vim 0.11+)
 --vim.opt.winborder = 'rounded' -- commenting out for now due to telescope issues
 
+-- this helps to reduce flickering from treesitter syntax redraws while typing
+vim.g._ts_force_sync_parsing = true
+
 -- Auto commands by filetype
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'lua', 'vim' },

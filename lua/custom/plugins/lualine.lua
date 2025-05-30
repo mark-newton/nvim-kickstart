@@ -42,7 +42,7 @@ return {
       local colPre = 'C:'
       local col = '%c '
 
-      return string.format('%s%s%s%s%s', lnePre, lne, colPre, col, sbar)
+      return string.format('%s%s%s%s%s', colPre, col, lnePre, lne, sbar)
     end
 
     local function createDiffString()
@@ -142,11 +142,16 @@ return {
       end
     end
 
+    local custom_kanso = require 'lualine.themes.kanso'
+    custom_kanso.normal.b.bg = '#24262d'
+    custom_kanso.normal.c.bg = '#1f1f28'
+
+    -- Change the background of lualine_c section for normal mode
     -- print(vim.inspect(nfColors))
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = custom_kanso,
         component_separators = { ' ', ' ' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
@@ -174,13 +179,14 @@ return {
           end,
           {
             'filename',
+            color = { fg = '#c8c093' },
             file_status = true,
-            path = 0,
+            path = 1,
             shorting_target = 40,
             symbols = {
               modified = '󰐖 ', -- Text to show when the file is modified.
               readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
-              unnamed = '[No Name]', -- Text to show for unnamed buffers.
+              unnamed = '', -- Text to show for unnamed buffers.
               newfile = '[New]', -- Text to show for new created file before first writting
             },
           },

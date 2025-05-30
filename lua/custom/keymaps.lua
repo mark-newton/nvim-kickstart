@@ -43,6 +43,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic message' })
 
 -- plugin keymaps
+vim.keymap.set({ 'n', 'v' }, '<leader>/', ':Pounce<CR>', { silent = true, desc = 'Pounce' })
 vim.keymap.set('n', '-', '<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>', { desc = 'Open parent directory in MiniFiles' })
 vim.keymap.set('n', '<leader>tt', "<cmd>lua require('nvchad.themes').open()<CR>", { desc = '[T]oggle [T]heme Selector' })
 vim.keymap.set('n', '<leader>tc', '<cmd>ColorizerToggle<CR>', { desc = '[T]oggle [C]olorizer' })

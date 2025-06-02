@@ -93,7 +93,66 @@ return {
           },
         },
       }
-      require('kanso').load 'ink'
+      -- require('kanso').load 'ink'
+    end,
+  },
+  {
+    'jwbaldwin/oscura.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('oscura').setup {
+        cursorline = vim.o.cursorline,
+        transparent_background = true,
+        nvim_tree_darker = false,
+        undercurl = true,
+        treesitter_context_bg = false,
+        float_borderless = false,
+      }
+      vim.cmd.colorscheme 'oscura'
+    end,
+  },
+  { -- NOTE: only need this when the colorscheme doesn't support overrides
+    'cwebster2/color-overrides.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local override_reset = {
+        'DiffAdd',
+        'DiffChange',
+        'DiffDelete',
+        'DiffText',
+        'Folded',
+        'MatchParen',
+      }
+      local override_set = {
+        -- kanagawa/kanso: zenblue2 = #2D4F67, oldWhite = #C8C093, inkYellow = #c4b28a
+        CurSearch = { guibg = '#daa461', guifg = '#15171c' },
+        CursorLine = { guibg = '#1c1e22' },
+        DiffAdd = { guibg = '#315532', guifg = '#ffffff' }, -- new line
+        DiffChange = { guibg = 'NONE', guifg = '#afd7ff' }, -- change line
+        DiffDelete = { guibg = '#713431', guifg = '#ffffff' }, -- del line
+        DiffText = { guibg = '#29416f', guifg = '#ffffff' }, -- change text
+        FloatBorder = { guibg = 'NONE', guifg = '#C8C093' },
+        Folded = { guibg = 'NONE' },
+        IncSearch = { guibg = '#daa461', guifg = '#15171c' },
+        MatchParen = { guibg = 'NONE', guifg = 'orange' },
+        NormalFloat = { guibg = 'NONE' },
+        Search = { guibg = '#2d4f67', guifg = '#ffffff' },
+        Special = { guifg = '#c4b28a' },
+        ['@type.builtin'] = { guifg = '#c4b28a' },
+        TelescopeNormal = { guibg = 'NONE' },
+        TelescopePreviewBorder = { guibg = 'NONE', guifg = '#C8C093' },
+        TelescopePromptBorder = { guibg = 'NONE', guifg = '#C8C093' },
+        TelescopePromptNormal = { guibg = 'NONE' },
+        TelescopePromptTitle = { guibg = 'NONE', guifg = '#FFFFFF' },
+        TelescopeResultsBorder = { guibg = 'NONE', guifg = '#C8C093' },
+        TelescopeTitle = { guibg = 'NONE', guifg = '#FFFFFF' },
+        Visual = { guibg = '#2d4f67' },
+        WhichKeyFloat = { guibg = 'NONE' },
+        WinSeparator = { guibg = 'NONE', guifg = '#C8C093' },
+      }
+      require('color-overrides').set_overrides(override_reset, override_set)
     end,
   },
 }

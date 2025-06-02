@@ -142,16 +142,17 @@ return {
       end
     end
 
-    local custom_kanso = require 'lualine.themes.kanso'
-    custom_kanso.normal.b.bg = '#24262d'
-    custom_kanso.normal.c.bg = '#1f1f28'
+    -- local custom_kanso = require 'lualine.themes.kanso'
+    -- custom_kanso.normal.b.bg = '#24262d'
+    -- custom_kanso.normal.c.bg = '#1f1f28'
 
     -- Change the background of lualine_c section for normal mode
     -- print(vim.inspect(nfColors))
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = custom_kanso,
+        theme = 'auto',
+        -- theme = custom_kanso,
         component_separators = { ' ', ' ' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},

@@ -26,8 +26,10 @@ return {
       button('f', icons.ui.files .. ' Find Files', ':Telescope find_files <CR>'),
       button('o', icons.ui.restore .. ' Recent Files', '<cmd>Telescope oldfiles<cr>'),
       button('t', icons.kinds.nvchad.Text .. ' Find text', ':Telescope live_grep <CR>'),
-      button('c', ' ' .. ' Neovim config', '<cmd>e ~/.config/nvim/ | cd %:p:h<cr>'),
+      button('c', icons.kinds.nvchad.Constructor .. ' Neovim config', '<cmd>e ~/.config/nvim/ | cd %:p:h<cr>'),
       button('l', '󰒲  Lazy', '<cmd>Lazy<cr>'),
+      button('m', '  Mason', '<cmd>Mason<cr>'),
+      button('h', '  Checkhealth', '<cmd>checkhealth<cr>'),
       button('q', icons.ui.close .. ' Quit NVIM', ':qa<CR>'),
     }
 

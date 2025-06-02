@@ -129,6 +129,7 @@ return {
         },
         list = { selection = { preselect = false } },
         menu = {
+          max_height = 13,
           draw = {
             gap = 2,
             columns = {

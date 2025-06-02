@@ -148,7 +148,7 @@ return {
         TelescopePromptTitle = { guibg = 'NONE', guifg = '#FFFFFF' },
         TelescopeResultsBorder = { guibg = 'NONE', guifg = '#C8C093' },
         TelescopeTitle = { guibg = 'NONE', guifg = '#FFFFFF' },
-        Visual = { guibg = '#2d4f67' },
+        Visual = { guibg = '#2d4f67', guifg = '#FFFFFF' },
         WhichKeyFloat = { guibg = 'NONE' },
         WinSeparator = { guibg = 'NONE', guifg = '#C8C093' },
       }

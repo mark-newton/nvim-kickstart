@@ -2,9 +2,29 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 vim.g.have_nerd_font = true
 
-vim.o.number = false
 vim.o.clipboard = ''
 vim.o.joinspaces = false
+vim.o.number = false
+vim.opt.autoindent = true
+vim.opt.backspace = 'indent,eol,start'
+vim.opt.cmdheight = 0
+vim.opt.completeopt = { 'menuone', 'noselect' }
+vim.opt.expandtab = true
+vim.opt.hidden = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.numberwidth = 4
+vim.opt.pumheight = 13
+vim.opt.relativenumber = false
+vim.opt.shiftwidth = 4
+vim.opt.shortmess:append 'c'
+vim.opt.smartindent = true
+vim.opt.smarttab = true
+vim.opt.softtabstop = 4
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.wrap = false
+vim.opt.writebackup = false
 
 -- code folding
 vim.o.foldenable = false -- turn off by default (turn on by filetype)

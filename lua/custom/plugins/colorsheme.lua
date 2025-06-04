@@ -127,19 +127,24 @@ return {
       }
       local override_set = {
         -- kanagawa/kanso: zenblue2 = #2D4F67, oldWhite = #C8C093, inkYellow = #c4b28a
-        CurSearch = { guibg = '#daa461', guifg = '#15171c' },
+        CurSearch = { guibg = '#e6e7a3', guifg = '#15171c' },
         CursorLine = { guibg = '#1c1e22' },
+        DiagnosticSignError = { guifg = '#db4b4b' },
+        DiagnosticSignHint = { guifg = '#1abc9c' },
+        DiagnosticSignInfo = { guifg = '#0db9d7' },
+        DiagnosticSignWarn = { guifg = '#e0af68' },
         DiffAdd = { guibg = '#315532', guifg = '#ffffff' }, -- new line
         DiffChange = { guibg = 'NONE', guifg = '#afd7ff' }, -- change line
         DiffDelete = { guibg = '#713431', guifg = '#ffffff' }, -- del line
         DiffText = { guibg = '#29416f', guifg = '#ffffff' }, -- change text
         FloatBorder = { guibg = 'NONE', guifg = '#C8C093' },
         Folded = { guibg = 'NONE' },
-        IncSearch = { guibg = '#daa461', guifg = '#15171c' },
+        IncSearch = { guibg = '#e6e7a3', guifg = '#15171c' },
         MatchParen = { guibg = 'NONE', guifg = 'orange' },
         NormalFloat = { guibg = 'NONE' },
         Search = { guibg = '#2d4f67', guifg = '#ffffff' },
         Special = { guifg = '#c4b28a' },
+        ['@tag.delimiter'] = { guifg = '#c4b28a' },
         ['@type.builtin'] = { guifg = '#c4b28a' },
         TelescopeNormal = { guibg = 'NONE' },
         TelescopePreviewBorder = { guibg = 'NONE', guifg = '#C8C093' },
@@ -150,7 +155,7 @@ return {
         TelescopeTitle = { guibg = 'NONE', guifg = '#FFFFFF' },
         Visual = { guibg = '#2d4f67', guifg = '#FFFFFF' },
         WhichKeyFloat = { guibg = 'NONE' },
-        WinSeparator = { guibg = 'NONE', guifg = '#C8C093' },
+        WinSeparator = { guibg = 'NONE', guifg = '#68737d' },
       }
       require('color-overrides').set_overrides(override_reset, override_set)
     end,

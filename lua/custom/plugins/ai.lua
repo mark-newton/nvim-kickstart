@@ -1,12 +1,12 @@
 return {
   {
-    "Exafunction/codeium.nvim",
+    'Exafunction/codeium.nvim',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp',
     },
     config = function()
-      require("codeium").setup({
+      require('codeium').setup {
         enable_cmp_source = true,
         virtual_text = {
           enabled = false,
@@ -23,41 +23,42 @@ return {
           map_keys = true,
           accept_fallback = nil,
           key_bindings = {
-            accept = "<Tab>",
+            accept = '<Tab>',
             accept_word = false,
             accept_line = false,
             clear = false,
-            next = "<Right>",
-            prev = "<M-[>",
-          }
-        }
-      })
+            next = '<Right>',
+            prev = '<M-[>',
+          },
+        },
+      }
     end,
   },
 
   { -- requires ANTHROPIC_API_KEY or OPENAI_API_KEY setup in env
-    "yetone/avante.nvim",
-    event = "VeryLazy",
+    'yetone/avante.nvim',
+    event = 'VeryLazy',
     version = false, -- Never set this value to "*"! Never!
     opts = {
-      provider = "claude",
-      openai = {
-        --model = "gpt-4o",
-        model = "gpt-4o-mini",
-      },
-      claude = {
-        model = "claude-3-7-sonnet-latest",
-        --model = "claude-3-5-sonnet-20241022",
-        disable_tools = true,
+      provider = 'claude',
+      providers = {
+        openai = {
+          --model = "gpt-4o",
+          model = 'gpt-4o-mini',
+        },
+        claude = {
+          model = 'claude-3-7-sonnet-latest',
+          disable_tools = true,
+        },
       },
       mappings = {
-        edit = "<leader>ae"
+        edit = '<leader>ae',
       },
       hints = { enabled = true },
       behavior = { enable_claude_text_editor_tool_mode = false },
       windows = {
-        ask = { start_insert = false, border = "rounded" },
-        edit = { border = "rounded" },
+        ask = { start_insert = false, border = 'rounded' },
+        edit = { border = 'rounded' },
       },
       system_prompt = [[
         Important user preferences:
@@ -71,20 +72,20 @@ return {
           your response.
       ]],
     },
-    build = "make",
+    build = 'make',
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-telescope/telescope.nvim",
-      "echasnovski/mini.icons",
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-telescope/telescope.nvim',
+      'echasnovski/mini.icons',
       {
         'MeanderingProgrammer/render-markdown.nvim',
         opts = {
-          file_types = { "markdown", "Avante" },
+          file_types = { 'markdown', 'Avante' },
         },
-        ft = { "markdown", "Avante" },
+        ft = { 'markdown', 'Avante' },
       },
     },
     init = function()

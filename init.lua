@@ -639,7 +639,7 @@ require('lazy').setup({
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
-        severity_sort = false,
+        severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
@@ -650,8 +650,7 @@ require('lazy').setup({
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_text = false,
-        xvirtual_text = {
+        virtual_text = {
           source = 'if_many',
           spacing = 2,
           format = function(diagnostic)
@@ -664,7 +663,6 @@ require('lazy').setup({
             return diagnostic_message[diagnostic.severity]
           end,
         },
-        update_in_insert = false,
       }
 
       -- Give me rounded borders everywhere

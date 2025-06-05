@@ -41,6 +41,10 @@ vim.g.netrw_browse_split = 0
 -- this helps to reduce flickering from treesitter syntax redraws while typing
 vim.g._ts_force_sync_parsing = true
 
+-- undercurl
+vim.cmd [[let &t_Cs = "\e[4:3m"]]
+vim.cmd [[let &t_Ce = "\e[4:0m"]]
+
 -- Auto commands by filetype
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'lua', 'vim' },

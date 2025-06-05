@@ -127,7 +127,7 @@ return {
       }
       local override_set = {
         -- kanagawa/kanso: zenblue2 = #2D4F67, oldWhite = #C8C093, inkYellow = #c4b28a
-        CurSearch = { guibg = '#e6e7a3', guifg = '#15171c' },
+        CurSearch = { guibg = '#DCA561', guifg = '#15171c' },
         CursorLine = { guibg = '#1c1e22' },
         DiagnosticSignError = { guifg = '#db4b4b' },
         DiagnosticSignHint = { guifg = '#1abc9c' },
@@ -139,7 +139,7 @@ return {
         DiffText = { guibg = '#29416f', guifg = '#ffffff' }, -- change text
         FloatBorder = { guibg = 'NONE', guifg = '#C8C093' },
         Folded = { guibg = 'NONE' },
-        IncSearch = { guibg = '#e6e7a3', guifg = '#15171c' },
+        IncSearch = { guibg = '#DCA561', guifg = '#15171c' },
         MatchParen = { guibg = 'NONE', guifg = 'orange' },
         NormalFloat = { guibg = 'NONE' },
         Search = { guibg = '#2d4f67', guifg = '#ffffff' },

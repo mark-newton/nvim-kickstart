@@ -211,12 +211,10 @@ return {
             separator = { left = '', right = '' },
           },
         },
-        lualine_y = {
-          nil,
-        },
         lualine_x = {
           { getScrollPos, width = 100, padding = { left = 10, right = 1 } },
         },
+        lualine_y = { 'filetype' },
         lualine_z = { nil },
       },
       inactive_sections = {

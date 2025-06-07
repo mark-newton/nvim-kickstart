@@ -1,4 +1,5 @@
 return {
+  -- converts text between different case types (snake/camel etc)
   'johmsalas/text-case.nvim',
   dependencies = { 'nvim-telescope/telescope.nvim' },
   config = function()

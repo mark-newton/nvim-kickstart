@@ -70,8 +70,8 @@ return {
               { 'kind_icon', 'kind', gap = 1 },
             },
           },
-          border = 'rounded',
-          winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,Normal:Normal',
+          -- border = 'rounded',
+          -- winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,Normal:Normal',
         },
         trigger = { prefetch_on_insert = false },
         ghost_text = { enabled = true },
@@ -80,6 +80,8 @@ return {
         keymap = {
           preset = 'cmdline',
           ['<CR>'] = { 'accept', 'fallback' },
+          ['<Up>'] = { 'select_prev', 'fallback' },
+          ['<Down>'] = { 'select_next', 'fallback' },
         },
         completion = {
           list = { selection = { preselect = false } },

@@ -152,6 +152,7 @@ return {
         BlinkCmpMenuSelection = { guibg = '#2d4f67' },
         Search = { guibg = '#2d4f67', guifg = '#ffffff' },
         Special = { guifg = '#c4b28a' },
+        ['@tag.attribute'] = { guifg = '#9099a1' },
         ['@tag.delimiter'] = { guifg = '#c4b28a' },
         ['@type.builtin'] = { guifg = '#c4b28a' },
         TelescopeNormal = { guibg = 'NONE' },

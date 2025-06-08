@@ -48,7 +48,7 @@ return {
         additional_vim_regex_highlighting = false,
       },
       autopairs = { enable = true },
-      indent = { enable = true, disable = { 'ruby', 'php' } },
+      indent = { enable = false, disable = { 'php' } },
       matchup = { enable = true },
       incremental_selection = {
         enable = true,

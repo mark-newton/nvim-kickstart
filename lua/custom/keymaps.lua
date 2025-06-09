@@ -18,7 +18,7 @@ vim.keymap.set('n', '<space>', 'za')
 
 -- splits
 vim.keymap.set('n', '<leader>v', '<C-w>v') -- split window vertically
-vim.keymap.set('n', '<leader>h', '<C-w>s') -- split window horizontally
+vim.keymap.set('n', '<leader>b', '<C-w>s') -- split window horizontally (h used by gitsigns)
 vim.keymap.set('n', '<leader>w', '<C-w>w') -- swap to next window
 vim.keymap.set('n', '<leader>x', ':close<CR>') -- close current split window
 vim.keymap.set('n', '<leader><left>', ':vertical resize +20<cr>')
@@ -38,6 +38,12 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+vim.keymap.set('n', '<leader>tl', function()
+  local number = vim.wo.number
+  vim.wo.number = not number
+  vim.wo.relativenumber = not number
+end, { desc = '[T]oggle [L]ine Numbers' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic message' })

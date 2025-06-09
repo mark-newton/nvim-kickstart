@@ -27,11 +27,12 @@ return {
     opts = {
       preview_config = { border = 'rounded' },
       signs = {
-        -- add = { text = '│' },
-        -- change = { text = '│' },
-        -- delete = { text = '│' },
-        -- topdelete = { text = '│' },
-        -- changedelete = { text = '│' },
+        add = { text = '┃' },
+        change = { text = '┃' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked = { text = '┆' },
       },
     },
   },
@@ -44,11 +45,10 @@ return {
       ignore_install = { 'haskell' },
       highlight = {
         enable = true,
-        disable = { 'python' },
         additional_vim_regex_highlighting = false,
       },
       autopairs = { enable = true },
-      indent = { enable = false, disable = { 'php' } },
+      indent = { enable = false },
       matchup = { enable = true },
       incremental_selection = {
         enable = true,

@@ -141,7 +141,10 @@ return {
         DiffDelete = { guibg = '#713431', guifg = '#ffffff' }, -- del line
         DiffText = { guibg = '#29416f', guifg = '#ffffff' }, -- change text
         FloatBorder = { guibg = 'NONE', guifg = '#68737d' },
-        Folded = { guibg = 'NONE' },
+        Folded = { guibg = 'NONE', guifg = '#68737d' },
+        GitSignsAdd = { guifg = '#0db9d7' },
+        GitSignsChange = { guifg = '#e0af68' },
+        GitSignsDelete = { guifg = '#db4b4b' },
         IncSearch = { guibg = '#DCA561', guifg = '#15171c' },
         MatchParen = { guibg = 'NONE', guifg = 'orange' },
         NormalFloat = { guifg = '#68737d', guibg = 'NONE' },

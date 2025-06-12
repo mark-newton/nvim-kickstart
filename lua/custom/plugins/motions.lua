@@ -1,11 +1,14 @@
 return {
-  'rlane/pounce.nvim',
-  config = function()
-    require('pounce').setup {
-      accept_keys = 'NTESIROAGJKDFVBYMCXWPQZ',
-      accept_best_key = '<enter>',
-      multi_window = true,
-      debug = false,
-    }
-  end,
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    ---@type Flash.Config
+    opts = {
+      modes = {
+        search = {
+          enabled = true,
+        },
+      },
+    },
+  },
 }

@@ -13,7 +13,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>Y', [["+Y]])
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
 -- folding
-vim.keymap.set('n', '<space>', 'za')
+vim.keymap.set('n', '<tab>', 'za')
 --vim.keymap.set("n", "<leader>o", "zR")
 
 -- splits

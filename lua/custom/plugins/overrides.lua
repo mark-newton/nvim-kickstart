@@ -48,6 +48,7 @@ return {
         additional_vim_regex_highlighting = false,
       },
       autopairs = { enable = true },
+      folding = { enable = true },
       indent = { enable = false },
       matchup = { enable = true },
       incremental_selection = {
@@ -61,8 +62,8 @@ return {
       },
     },
 
-    -- PHP folds on functions only
+    -- Function folds only
     require('vim.treesitter.query').set('php', 'folds', '(method_declaration) @fold'),
-    -- require('vim.treesitter.query').set('python', 'folds', '(function_declaration body: (block @fold'),
+    require('vim.treesitter.query').set('python', 'folds', '(function_definition) @fold'),
   },
 }

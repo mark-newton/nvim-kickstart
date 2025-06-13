@@ -5,8 +5,10 @@ vim.g.have_nerd_font = true
 vim.o.clipboard = ''
 vim.o.joinspaces = false
 vim.o.number = false
+
 vim.opt.autoindent = true
-vim.opt.backspace = 'indent,eol,start'
+vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.opt.cindent = true
 vim.opt.cmdheight = 0
 vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.opt.expandtab = true
@@ -47,14 +49,13 @@ vim.cmd [[let &t_Ce = "\e[4:0m"]]
 
 -- Auto commands by filetype
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'vim' },
+  pattern = { 'lua', 'vim', 'sh' },
   callback = function()
     vim.opt_local.shiftwidth = 2
-    vim.opt_local.tabstop = 2
     vim.opt_local.softtabstop = 2
-    vim.opt_local.expandtab = true
-    vim.o.foldenable = true
-    vim.o.foldmethod = 'marker'
+    vim.opt_local.tabstop = 2
+    vim.wo.foldenable = true
+    vim.wo.foldmethod = 'marker'
   end,
 })
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
@@ -67,49 +68,41 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'html', 'coffee' },
   callback = function()
     vim.opt_local.shiftwidth = 2
-    vim.opt_local.tabstop = 2
     vim.opt_local.softtabstop = 2
-    vim.opt_local.expandtab = true
-    vim.o.foldenable = false
+    vim.opt_local.tabstop = 2
+    vim.wo.foldenable = false
   end,
 })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'php',
   callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
-    vim.opt_local.expandtab = true
-    vim.opt_local.autoindent = true
-    vim.opt_local.smartindent = true
-    vim.opt_local.cindent = true
     vim.opt_local.indentexpr = ''
-    vim.o.kp = ':help'
-    vim.o.foldenable = true
-    vim.o.foldmethod = 'expr'
-    -- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-    vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
+    vim.wo.foldenable = true
+    vim.wo.foldmethod = 'expr'
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
     vim.bo.commentstring = '// %s'
   end,
 })
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'py',
+  pattern = 'python',
   callback = function()
-    vim.o.foldenable = true
-    vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.opt.foldmethod = 'expr'
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
+    vim.wo.foldenable = true
+    vim.wo.foldmethod = 'expr'
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
   end,
 })
 vim.api.nvim_create_autocmd('VimEnter', {
-  desc = 'Auto select virtualenv Nvim open',
-  pattern = 'py',
-  callback = function()
-    local venv = vim.fn.findfile('.venv', vim.fn.getcwd() .. ';')
-    if venv ~= '' then
-      require('venv-selector').retrieve_from_cache()
-    end
-  end,
+  pattern = '*.py',
   once = true,
+  callback = function()
+    require('venv-selector').retrieve_from_cache()
+  end,
 })
 
 -- Show cursor line on active window only

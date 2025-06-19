@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 vim.api.nvim_create_autocmd('VimEnter', {
-  pattern = '*.py',
+  pattern = 'python',
   once = true,
   callback = function()
     require('venv-selector').retrieve_from_cache()

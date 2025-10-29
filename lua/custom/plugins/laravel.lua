@@ -5,7 +5,9 @@ return {
       'tpope/vim-dotenv',
       'nvim-telescope/telescope.nvim',
       'MunifTanjim/nui.nvim',
-      'kevinhwang91/promise-async',
+      'nvim-lua/plenary.nvim',
+      'nvim-neotest/nvim-nio',
+      'ravitemer/mcphub.nvim', -- optional
     },
     cmd = { 'Laravel' },
     keys = {
